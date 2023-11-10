@@ -1,0 +1,45 @@
+.task-wrapper {
+    max-width: 500px;
+    width: 100%;
+    margin: 50px auto 0;
+    box-shadow: 0px 1px 32px 0px rgba(174, 172, 243, 0.85);
+    padding: 20px;
+    .headline{
+        margin-bottom: 30px;
+    }
+    &__label{
+
+    }
+    &__input{
+        width: 100%;
+        border: 1px solid gray;
+    }
+    &__btn{
+        width: 100%;
+    }
+}
+
+.task-list {
+    list-style-type: none;
+    margin-top: 40px;
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        border: 1px solid gray;
+        padding: 10px;
+    }
+    &__checkbox{
+        display: flex;
+        align-items: center;
+    }
+    &__check{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    &__label{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+}

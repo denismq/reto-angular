@@ -1,0 +1,60 @@
+<div class="task-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <header class="headline">
+          <h1 class="headline__title">Lista de Tareas</h1>
+        </header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="" class="task-wrapper__label">Tarea</label>
+      </div>
+      <div class="col-md-7">
+        <input
+          type="text"
+          class="task-wrapper__input form-control"
+          [(ngModel)]="name"
+          (keydown.enter)="addTask()"
+        />
+      </div>
+      <div class="col-md-3">
+        <button (click)="addTask()" class="btn btn-secondary task-wrapper__btn">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="task-list">
+          <li
+            class="task-list__item"
+            *ngFor="let item of taskList; let i = index"
+          >
+            <div class="task-list__checkbox">
+              <input
+                [(ngModel)]="item.completed"
+                class="task-list__check"
+                (change)="changeStatus()"
+                type="checkbox"
+                id="{{ i }}"
+              />
+              <label for="{{ i }}" class="task-list__label">{{
+                item.name
+              }}</label>
+            </div>
+
+            <button
+              class="btn btn-danger"
+              (click)="deleteTask(i)"
+              *ngIf="!item.completed"
+            >
+              Eliminar
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
